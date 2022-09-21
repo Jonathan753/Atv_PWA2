@@ -8,13 +8,13 @@ self.addEventListener('install', event => {
     caches.open(cacheName)
       .then(cache => cache.addAll([
 
-        './index.html'
-        /* './comparador.html',
+        './index.html',
+        './comparador.html',
         './converter.html',
         './elements.html',
         './generic.html',
-        './OCR.html',
-        './assets/css/main.css',
+        './OCR.html'
+        /*'./assets/css/main.css',
         './assets/css/main.css',
         './assets/css/noscript.css',
         './assets/js/breakpoints.min.js',
