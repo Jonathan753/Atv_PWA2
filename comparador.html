@@ -54,171 +54,13 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Comparador</h1>
-							<span class="image main"><img src="assets/images/buscador_illustration.png" alt="" /></span>
+							<span class="image main"><img src="assets/images/comparador_illustration.png" alt="" /></span>
 							<p>Compare dois ou mais documentos e encontre erros entre eles com o comparador da Di2Win, com essa ferramenta, você poupa tempo e 
                                 energia.
 							</p>
 								
-							<ul>
-								<p><a onclick="donate()"  class="button primary">Comprar</a></p>
-								<p id="log"></p>
-							</ul>
-					</div>
-
-					<div class="columns">
-						<div class="column">
-						  <p><button type="button" onclick="getStream('video')">Testar produto</button></p>
-						  
-						  <video controls autoplay style="height:180px; width: 240px;"></video>
-					  </div>
-
-					  <script>
-						/**
-* Builds PaymentRequest for credit cards, but does not show any UI yet.
-*/
-function initPaymentRequest() {
-let networks = ['amex', 'jcb', 'visa', 'maestro', 'mastercard'];
-
-let supportedInstruments = [{
-supportedMethods: 'basic-card', // note that this method is deprecated and its support will be removed
-data: {
-supportedNetworks: networks, 
-}
-}, {
-supportedMethods: 'https://apple.com/apple-pay',
-data: {
-version: 2,
-supportedNetworks: networks,
-countryCode: 'US',
-merchantIdentifier: 'whatwebcando.today.sample',
-merchantCapabilities: ['supportsDebit', 'supportsCredit', 'supports3DS']
-}
-}];
-
-let details = {
-total: {label: 'Donation', amount: {currency: 'EUR', value: '10.00'}},
-displayItems: [
-{
-label: 'Original donation amount',
-amount: {currency: 'EUR', value: '15.00'}
-},
-{
-label: 'Friends and family discount',
-amount: {currency: 'EUR', value: '-5.00'}
-}
-]
-};
-
-return new PaymentRequest(supportedInstruments, details);
-}
-
-/**
-* Invokes PaymentRequest for credit cards.
-*/
-function onBuyClicked(request) {
-request.show()
-.then(instrumentResponse => sendPaymentToServer(instrumentResponse))
-.catch(err => document.getElementById('log').innerText = err);
-}
-
-/**
-* Simulates processing the payment data on the server.
-*/
-function sendPaymentToServer(instrumentResponse) {
-// There's no server-side component of these samples. No transactions are
-// processed and no money exchanged hands. Instantaneous transactions are not
-// realistic. Add a 2 second delay to make it seem more real.
-
-window.setTimeout(function () {
-instrumentResponse.complete('success')
-.then(() => document.getElementById('log').innerHTML = resultToTable(instrumentResponse))
-.catch(err => document.getElementById('log').innerText = err);
-}, 2000);
-}
-
-/**
-* Converts the payment instrument into a JSON string.
-*/
-function resultToTable(result) {
-return '' +
-'' +
-'' +
-'' +
-'' +
-'' +
-'' +
-'Method name' + result.methodName + 'Billing address' + (result.details.billingAddress || {}).addressLine + ', ' + (result.details.billingAddress || {}).city + 'Card number' + result.details.cardNumber + 'Security code' + result.details.cardSecurityCode + 'Cardholder name' + result.details.cardholderName + 'Expiry date' + result.details.expiryMonth + '/' + result.details.expiryYear + '';
-}
-
-function donate() {
-if (!window.PaymentRequest) {
-alert('This browser does not support Web Payments API');
-return;
-}
-
-let request = initPaymentRequest();
-onBuyClicked(request);
-}
-					</script>
-
-					<br>
-					<h2 style="text-align: center;">Teste nosso produto</h2>
-					<div class="columns">
-						<div class="column">
-							<center><video controls autoplay style="height:180px; width: 240px;"></video></center>
-							<br>
-							<p style="text-align:center"><button  type="button" onclick="getStream('video')">Teste aqui</button></p>
-						</div>
-					</div>
-
-<script>
-function getUserMedia(constraints) {
-// if Promise-based API is available, use it
-if (navigator.mediaDevices) {
-return navigator.mediaDevices.getUserMedia(constraints);
-}
-// otherwise try falling back to old, possibly prefixed API...
-var legacyApi = navigator.getUserMedia || navigator.webkitGetUserMedia ||
-navigator.mozGetUserMedia || navigator.msGetUserMedia;
-
-if (legacyApi) {
-// ...and promisify it
-return new Promise(function (resolve, reject) {
-legacyApi.bind(navigator)(constraints, resolve, reject);
-});
-}
-}
-
-function getStream (type) {
-if (!navigator.mediaDevices && !navigator.getUserMedia && !navigator.webkitGetUserMedia &&
-!navigator.mozGetUserMedia && !navigator.msGetUserMedia) {
-alert('User Media API not supported.');
-return;
-}
-
-var constraints = {};
-constraints[type] = true;
-
-getUserMedia(constraints)
-.then(function (stream) {
-var mediaControl = document.querySelector(type);
-
-if ('srcObject' in mediaControl) {
-mediaControl.srcObject = stream;
-} else if (navigator.mozGetUserMedia) {
-mediaControl.mozSrcObject = stream;
-} else {
-mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
-}
-
-mediaControl.play();
-})
-.catch(function (err) {
-alert('Error: ' + err);
-});
-}
-
-				<!-- Footer -->
+							
+				
 					<footer id="footer">
 						<div class="inner">
 							<section>
@@ -254,8 +96,7 @@ alert('Error: ' + err);
 					</footer>
 
 			</div>
-
-		<!-- Scripts -->
+		
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
