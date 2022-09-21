@@ -13,8 +13,8 @@ self.addEventListener('install', event => {
         './converter.html',
         './elements.html',
         './generic.html',
-        './OCR.html'
-        /*'./assets/css/main.css',
+        './OCR.html',
+        './assets/css/main.css',
         './assets/css/main.css',
         './assets/css/noscript.css',
         './assets/js/breakpoints.min.js',
@@ -33,8 +33,6 @@ self.addEventListener('install', event => {
         './assets/images/AppIcons/180.png',
         './assets/images/AppIcons/512.png',
         './assets/images/AppIcons/1024.png',
-        './assets/images/AppIcons/appstore.png',
-        './assets/images/AppIcons/playstore.png',*/
     ]))
   );
 });
