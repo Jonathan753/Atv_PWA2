@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -61,29 +62,29 @@
 								
 							<ul style="text-align: center"><a href="#" class="button primary">Comprar</a></ul>
 							<br>
-							
+							<h2 style="text-align: center;">Teste nosso produto</h2>
 							<div class="columns">
 								<div class="column">
-									<video controls autoplay style="height:180px; width: 240px;"></video>
-									<p><button type="button" onclick="getStream('video')">Grab video</button></p>
+									<center><video controls autoplay style="height:180px; width: 240px;"></video></center>
+									<br>
+									<p style="text-align:center"><button  type="button" onclick="getStream('video')">Teste aqui</button></p>
 								</div>
 							</div>
 
-							<script>
-							function getUserMedia(constraints) {
-  // if Promise-based API is available, use it
-  if (navigator.mediaDevices) {
+	<script>
+	function getUserMedia(constraints) {
+  	// if Promise-based API is available, use it
+  	if (navigator.mediaDevices) {
     return navigator.mediaDevices.getUserMedia(constraints);
-  }
-    
-  // otherwise try falling back to old, possibly prefixed API...
-  var legacyApi = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+    }
+  	// otherwise try falling back to old, possibly prefixed API...
+  	var legacyApi = navigator.getUserMedia || navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia || navigator.msGetUserMedia;
     
-  if (legacyApi) {
+    if (legacyApi) {
     // ...and promisify it
     return new Promise(function (resolve, reject) {
-      legacyApi.bind(navigator)(constraints, resolve, reject);
+    legacyApi.bind(navigator)(constraints, resolve, reject);
     });
   }
 }
@@ -123,39 +124,38 @@ function getStream (type) {
 		
 
 				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Entre em Contato</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Nome" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Mensagem"></textarea>
-										</div>
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>Entre em Contato</h2>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="name" id="name" placeholder="Nome" />
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Enviar" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Contatos</h2>
-								<ul class="icons">
-									<li><a href="tel:+49.157.0156" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="malito:nowhere@mozilla.org" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="Mensagem"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Enviar" class="primary" /></li>
 								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</form>
+						</section>
+						<section>
+							<h2>Contatos</h2>
+							<ul class="icons">
+								<li><a href="tel:+49.157.0156" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+								<li><a href="malito:nowhere@mozilla.org" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								
+
 							</ul>
-						</div>
-					</footer>
+						</section>
+					</div>
+				</footer>
 
 			</div>
 
