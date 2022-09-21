@@ -121,6 +121,7 @@ input, select, textarea {
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.75;
+		color: #f6f6f6;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -211,6 +212,7 @@ input, select, textarea {
 
 	h2 {
 		font-size: 1.1em;
+		color: #f6f6f6;
 	}
 
 	h3 {
@@ -3168,7 +3170,7 @@ input, select, textarea {
 
 	#footer {
 		padding: 5em 0 6em 0 ;
-		background-color: #f6f6f6;
+		background-color: #928f8f;
 	}
 
 		#footer > .inner {
