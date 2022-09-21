@@ -72,7 +72,7 @@
 										</div>
 									</a>
 								</article>
-								<article class="style2">
+								<article class="style1">
 									<span class="image">
 										<img src="assets/images/comparador.png" alt="" />
 									</span>
@@ -84,7 +84,7 @@
 										</div>
 									</a>
 								</article>
-								<article class="style3">
+								<article class="style1">
 									<span class="image">
 										<img src="assets/images/converter.png" alt="" />
 									</span>
@@ -96,7 +96,7 @@
 										</div>
 									</a>
 								</article>
-								<article class="style4">
+								<article class="style1">
 									<span class="image">
 										<img src="assets/images/OCR.png" alt="" />
 									</span>
@@ -159,26 +159,26 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				let newWorker;
-			   
+			
 				if ('serviceWorker' in navigator) {
-				  navigator.serviceWorker.register('/service-worker.js').then(reg => {
+				navigator.serviceWorker.register('/service-worker.js').then(reg => {
 					reg.addEventListener('updatefound', () => {
 					  // A wild service worker has appeared in reg.installing!
-					  newWorker = reg.installing;
-					  newWorker.addEventListener('statechange', () => {
+					newWorker = reg.installing;
+					newWorker.addEventListener('statechange', () => {
 						// Has network.state changed?
 			
-					  });
 					});
-				  });
-				  let refreshing;
-				  navigator.serviceWorker.addEventListener('controllerchange', function () {
+					});
+				});
+				let refreshing;
+				navigator.serviceWorker.addEventListener('controllerchange', function () {
 					if (refreshing) return;
 					window.location.reload();
 					refreshing = true;
-				  });
+				});
 				}
-			  </script>
+			</script>
 
 	</body>
 </html>
