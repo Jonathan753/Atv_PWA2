@@ -35,11 +35,7 @@ self.addEventListener('install', event => {
         './assets/images/AppIcons/1024.png',
         './assets/images/AppIcons/appstore.png',
         './assets/images/AppIcons/playstore.png',
-        './assets/images/AppIcons/.png',
-
-
-
-      ]))
+    ]))
   );
 });
 
