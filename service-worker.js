@@ -9,6 +9,33 @@ self.addEventListener('install', event => {
       .then(cache => cache.addAll([
 
         './index.html',
+        './comparador.html',
+        './converter.html',
+        './elements.html',
+        './generic.html',
+        './OCR.html',
+        './assets/css/main.css',
+        './assets/css/main.css',
+        './assets/css/noscript.css',
+        './assets/js/breakpoints.min.js',
+        './assets/js/browser.min.js',
+        './assets/js/jquery.min.js',
+        './assets/js/main.js',
+        './assets/js/util.js',
+        './assets/images/AppIcons/29.png',
+        './assets/images/AppIcons/40.png',
+        './assets/images/AppIcons/57.png',
+        './assets/images/AppIcons/60.png',
+        './assets/images/AppIcons/80.png',
+        './assets/images/AppIcons/87.png',
+        './assets/images/AppIcons/114.png',
+        './assets/images/AppIcons/120.png',
+        './assets/images/AppIcons/180.png',
+        './assets/images/AppIcons/512.png',
+        './assets/images/AppIcons/1024.png',
+        './assets/images/AppIcons/.png',
+
+
 
       ]))
   );
