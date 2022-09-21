@@ -14,6 +14,7 @@ self.addEventListener('install', event => {
         './elements.html',
         './generic.html',
         './OCR.html',
+        './manifest.json',
         './assets/css/main.css',
         './assets/css/main.css',
         './assets/css/noscript.css',
