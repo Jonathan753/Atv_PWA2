@@ -2853,7 +2853,7 @@ input, select, textarea {
 				margin-right: 0.65em;
 			}
 
-				#header .logo .symbol img {
+				#header .symbol  {
 					display: block;
 					width: 2em;
 					height: 2em;
