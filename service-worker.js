@@ -8,8 +8,8 @@ self.addEventListener('install', event => {
     caches.open(cacheName)
       .then(cache => cache.addAll([
 
-        './index.html',
-        './comparador.html',
+        './index.html'
+        /* './comparador.html',
         './converter.html',
         './elements.html',
         './generic.html',
@@ -34,7 +34,7 @@ self.addEventListener('install', event => {
         './assets/images/AppIcons/512.png',
         './assets/images/AppIcons/1024.png',
         './assets/images/AppIcons/appstore.png',
-        './assets/images/AppIcons/playstore.png',
+        './assets/images/AppIcons/playstore.png',*/
     ]))
   );
 });
@@ -48,12 +48,12 @@ self.addEventListener('message', function (event) {
 self.addEventListener('fetch', function (event) {
   //Atualizacao internet
   event.respondWith(async function () {
-     try {
-       return await fetch(event.request);
-     } catch (err) {
-       return caches.match(event.request);
-     }
-   }());
+    try {
+      return await fetch(event.request);
+    } catch (err) {
+      return caches.match(event.request);
+    }
+  }());
 
   //Atualizacao cache
   /*event.respondWith(
